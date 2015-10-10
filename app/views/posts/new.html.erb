@@ -1,1 +1,16 @@
-<h1>This is NEW</h1>
+<h1>This is NEW Posts</h1>
+
+<%= form_for :post, url: posts_path do |f| %>
+	<p>
+		<%= f.label :title %><br>
+		<%= f.text_field :title %><br>
+	</p>
+	<p>
+		<%= f.label :body %>
+		<%= f.text_area :body %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
