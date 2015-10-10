@@ -7,5 +7,4 @@ My personal challenge is to incorporate TDD ahead of the steps Mackenzie calls f
 
 Please see the wiki to follow my documentation of my testing steps and all this process is teaching me.
 
-[12in12_Blog Testing Development Wiki](https://github.com/storycoder/twelve_blog/wiki).
-=====================================================
+*  **[12in12_Blog Testing Development Wiki](https://github.com/storycoder/twelve_blog/wiki).**
