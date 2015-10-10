@@ -41,5 +41,21 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+group :development do
+  # guard for automatically running tests on changes
+  gem 'guard', require: false
+  gem 'guard-bundler', require: false
+  gem 'guard-minitest', require: false
+  gem 'rb-fsevent', require: false
+end
+
+group :test do
+  gem 'capybara'
+  gem 'launchy'
+  gem 'minitest-reporters'
+  gem 'shoulda'
+end
+
 end
 
