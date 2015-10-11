@@ -14,9 +14,9 @@ test 'Index page shows all posts' do
 	assert page.has_content?('Posts')
 
 	assert page.has_content?(@entry_one.title)
-	assert page.has_content?(@entry_two.body)
+	assert page.has_content?(@entry_one.body)
 
-	assert page.has_content?(@entry_one.title)
+	assert page.has_content?(@entry_two.title)
 	assert page.has_content?(@entry_two.body)
 
 end
