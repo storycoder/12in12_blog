@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-post_one:
+entry_one:
   title: "Foobar"
   body: "Ipsum This"
 
-post_two:
+entry_two:
   title: "Barfoo"
   body: "This Ipsum"
