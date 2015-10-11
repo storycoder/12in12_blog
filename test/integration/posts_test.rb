@@ -6,7 +6,7 @@ class PostsTest < ActionDispatch::IntegrationTest
   	@entry_one = posts(:entry_one)
   	@entry_two = posts(:entry_two)
 
-  	visit_events_path
+  	visit posts_path
 
   end
 
