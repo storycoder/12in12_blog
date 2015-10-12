@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PostsTest < ActionDispatch::IntegrationTest
   
-  def set_up
+  def setup
   	@entry_one = posts(:entry_one)
   	@entry_two = posts(:entry_two)
 
