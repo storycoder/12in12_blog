@@ -48,12 +48,11 @@ class PostsControllerTest < ActionController::TestCase
 
   #update test has errors
   test "should update post" do 
-    assert_difference('Post.count') do 
-      put :update, post: {title: 'My Post', body: 'Updated Ipsum'}
+    assert_no_difference('Post.count') do 
+      put :update, id: @post.id, post: {title: 'My Post', body: 'Updated Ipsum'}
     end
 
     assert_redirected_to post_path(assigns(:post))
   end
-
 
 end
