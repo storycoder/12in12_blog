@@ -1,16 +1,5 @@
-<h1>This is NEW Posts</h1>
+<h1>New Post</h1>
 
-<%= form_for :post, url: posts_path do |f| %>
-	<p>
-		<%= f.label :title %><br>
-		<%= f.text_field :title %>
-	</p>
-	<p>
-		<%= f.label :body %><br>
-		<%= f.text_area :body %>
-	</p>
+<%= render 'form' %>
 
-	<p>
-		<%= f.submit "Create Post" %>
-	</p>
-<% end %>
+

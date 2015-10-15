@@ -5,6 +5,7 @@ class PostsControllerTest < ActionController::TestCase
   def setup
     @post = posts(:entry_one)
   end
+  
 
   test "should get index" do 
   	get :index
@@ -15,6 +16,7 @@ class PostsControllerTest < ActionController::TestCase
   test "should show post" do
     get :show, id: @post.id
     assert_response :success
+    assert_not_nil assigns(:post)
   end
 
   test "should get new" do 
@@ -24,7 +26,7 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "should post create" do 
-    assert_difference('Post.count') do 
+    assert_difference('Post.count', +1) do 
       post :create, post: {title: 'My Post', body: 'Some ipsum'}
     end
 
@@ -36,6 +38,7 @@ class PostsControllerTest < ActionController::TestCase
   test "should get edit" do 
     get :edit, id: @post.id
     assert_response :success
+    assert_not_nil assigns(:post)
   end
 
   test "should destroy post" do
@@ -46,13 +49,11 @@ class PostsControllerTest < ActionController::TestCase
     assert_redirected_to posts_path
   end
 
-  #update test has errors
   test "should update post" do 
     assert_no_difference('Post.count') do 
-      put :update, id: @post.id, post: {title: 'My Post', body: 'Updated Ipsum'}
+      patch :update, id: @post.id, post: {title: 'My Post', body: 'Updated Ipsum'}
     end
 
     assert_redirected_to post_path(assigns(:post))
   end
-
 end
