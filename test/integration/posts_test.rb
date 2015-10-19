@@ -21,6 +21,16 @@ class PostsTest < ActionDispatch::IntegrationTest
 
 	end
 
+	test 'show page shows post' do
+		click_link(@entry_one.title)
+		assert page.has_content?(@entry_one.title)
+		assert page.has_content?(@entry_one.body)
+		#need a test for time_ago_in_words
+		click_link('Edit Post')
+		click_link('Back')
+		click_link('Delete')
+	end
+
 	test 'Can create posts' do 
 
 		click_link('Create Post')
@@ -28,7 +38,7 @@ class PostsTest < ActionDispatch::IntegrationTest
 		fill_in 'Title', with: 'My Blog Entry'
 		fill_in 'Body', with: 'My ipsum is your ipsum'
 
-		click_button 'Create Your Post'
+		click_button 'Create Post'
 
 		assert page.has_content?('My Blog Entry')
 		assert page.has_content?('My ipsum is your ipsum')
