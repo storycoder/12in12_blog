@@ -1,12 +1,12 @@
+<div class="post_wrapper">
 <h1>Posts</h1>
 
 <%= link_to 'Create Post', new_post_path %>
 <br>
-<% @posts.each do |post|  %>
-	<div class="post_wrapper">
-		<h2 class="title"><%= link_to post.title, post %></h2>
-	
-	    <p class="date"><%= post.created_at.strftime("%B, %d %Y") %></p>
-		<p class="body"><%= post.body[0..250] %>...[<%= link_to "READ MORE", post %>] %> </p>
-	</div>
-<% end %>
+	<% @posts.each do |post|  %>
+			<h2 class="title"><%= link_to post.title, post %></h2>
+		
+		    <p class="date"><%= post.created_at.strftime("%B, %d %Y") %></p>
+			<p class="body"><%= post.body[0..250] %>...[<%= link_to "READ MORE", post %>] </p>
+	<% end %>
+</div>
