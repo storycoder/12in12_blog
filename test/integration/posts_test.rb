@@ -10,6 +10,29 @@ class PostsTest < ActionDispatch::IntegrationTest
 
   end
 
+  	test 'sidebar shows all content & clicks all links' do 
+  		assert page.has_content?('Website')
+  		click_link('Blog')
+  		click_link('About')
+
+  		assert page.has_content?('Social')
+  		# click_link('Twitter').observable_redirect_to('https://twitter.com/josephmargolis')
+  		# click_link('')
+  		# click_link('')
+  		# click_link('')
+
+#I need to find a DRY way to test for functional external links to urls and email.
+
+  		assert page.has_content?('Admin Login')
+  	end
+
+  	test 'header shows all content and clicks all buttons' do 
+  		assert page.has_content?('All Posts')
+  		click_button 'New Post'
+  		click_button 'Log Out'
+  	end
+  		
+
 	test 'Index page shows all posts' do 
 		assert page.has_content?('Posts')
 
