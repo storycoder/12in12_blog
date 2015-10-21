@@ -16,10 +16,10 @@ class PostsTest < ActionDispatch::IntegrationTest
   		click_link('About')
 
   		assert page.has_content?('Social')
-  		# click_link('Twitter').observable_redirect_to('https://twitter.com/josephmargolis')
-  		# click_link('')
-  		# click_link('')
-  		# click_link('')
+  		assert page.has_link?('Twitter', href: 'https://twitter.com/josephmargolis')
+  		assert page.has_link?('Instagram', href: 'http://instagram.com/josephmargolis')
+  		assert page.has_link?('Github', href: 'https://github.com/storycoder')
+  		assert page.has_link?('Email', href: 'mailto:joseph.margolis@gmail.com')
 
 #I need to find a DRY way to test for functional external links to urls and email.
 
