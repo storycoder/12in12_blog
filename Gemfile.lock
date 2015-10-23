@@ -211,6 +211,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   minitest-reporters
+  pry
   rails (= 4.2.3)
   rb-fsevent
   sass-rails (~> 5.0)

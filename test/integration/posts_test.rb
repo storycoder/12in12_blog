@@ -35,10 +35,12 @@ class PostsTest < ActionDispatch::IntegrationTest
 
 		assert page.has_content?(@entry_one.title)
 		assert page.has_link?(@entry_one.title)
-		assert page.has_text?(@entry_one.body.length <= 250)
+
+		# binding.pry;
+		assert page.find('.body').text.length <= 265
 
 
-		# assert (@entry_one.body.length <= 250 ) #I wrote this to test the function that limits no. of chars of per post seen by user on index to be no more that 250, but now I believe this test only provides length of entire text. NEEDS MORE WORK!!
+		# find('p', @entry_one.body.length <= 250) #I wrote this to test the function that limits no. of chars of per post seen by user on index to be no more that 250, but now I believe this test only provides length of entire text. NEEDS MORE WORK!!
 		
 		assert has_link?('READ MORE', @entry_one ) #This is edited to account for post_path being same as @entry_one in the fixture/setup - Still need a test for max # of characters. 
 	end
