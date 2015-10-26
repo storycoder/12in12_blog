@@ -20,7 +20,7 @@ class PostsTest < ActionDispatch::IntegrationTest
   		assert page.has_link?('Github', href: 'https://github.com/storycoder')
   		assert page.has_link?('Email', href: 'mailto:joseph.margolis@gmail.com')
 
-  		assert page.has_content?('Admin Login')
+  		assert page.has_text?('Admin Login')
   	end
 
   	test 'header shows all content and clicks all buttons' do 
