@@ -1,3 +1,4 @@
+#Tests functions of elements built in to posts/layouts/application.html.erb
 require 'test_helper'
 
 class ApplicationElementsTest < ActionDispatch::IntegrationTest
