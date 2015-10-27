@@ -10,6 +10,12 @@
 		<button class="button"><%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to delete #{@post.title}'} %>
 		</button>
 	</div>
+	<div id="comments">
+		<h2><%= @post.comments.count %> Comments</h2>
+		<%= render @post.comments %>
+		<h3>Add a Comment:</h3>
+		<%= render "comments/form" %>
+	</div>
 </div>
 
 

@@ -7,6 +7,7 @@ class PostTest < ActiveSupport::TestCase
   	assert @post.valid?
   end
 
+  should have_many(:comments)
   should validate_presence_of(:title)
   should validate_presence_of(:body)
 end

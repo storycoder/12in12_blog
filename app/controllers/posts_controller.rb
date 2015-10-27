@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 
-		if @post.update(post_params)
+		if @post.update(params[:post].permit(:title, :body))
 			redirect_to @post, notice: 'Event updated successfully'
 		else
 			render :edit
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
 	def destroy
 		@post = Post.find(params[:id])
 		@post.destroy
-		redirect_to posts_url, notice: 'Post deleted successfully'
+		redirect_to root_path, notice: 'Postdeleted successfully'
 	end
 
 	private

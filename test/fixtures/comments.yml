@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+comment_one:
+  name: "joe smith"
+  comment_body: "Comment ipsum"
+  post_id: 1
+
+comment_two:
+  name: "John Jonees"
+  comment_body: "The comment ipsum"
+  post_id: 2
