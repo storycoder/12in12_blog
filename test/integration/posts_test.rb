@@ -36,7 +36,7 @@ class PostsTest < ActionDispatch::IntegrationTest
 		assert page.has_content?(@entry_one.title)
 		assert page.has_link?(@entry_one.title)
 
-		# binding.pry;
+		binding.pry;
 		assert page.find('.body').text.length <= 265
 
 

@@ -5,11 +5,13 @@
 	</p>
 	<p><%= @post.body %></p>
 	<br>
-	<div class="buttons">
-		<button class="button"><%= link_to 'Edit Post', edit_post_path %></button>
-		<button class="button"><%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to delete #{@post.title}'} %>
-		</button>
-	</div>
+	<% if user_signed_in? %>
+		<div class="buttons">
+			<button class="button"><%= link_to 'Edit Post', edit_post_path %></button>
+			<button class="button"><%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to delete #{@post.title}'} %>
+			</button>
+		</div>
+	<% end %>
 	<div id="comments">
 		<h2><%= @post.comments.count %> Comments</h2>
 		<%= render @post.comments %>
