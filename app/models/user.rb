@@ -5,6 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :comments
   has_many :posts
-  validates :name, presence: true
 
 end
